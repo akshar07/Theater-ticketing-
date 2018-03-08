@@ -1,0 +1,21 @@
+.movies{
+    text-align: left;
+}
+ul {
+    list-style: none;
+}
+.image img{
+    height:200px;width:170px !important;
+}
+.showTimes{
+    padding:3px;
+    font-size: 12px;
+    background: #ccc;
+    color:red;
+    margin-right: 20px;
+}
+.description{padding-top:35px}
+.movies li{
+    
+    margin-top:20px;
+}
