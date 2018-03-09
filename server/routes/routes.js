@@ -1,4 +1,4 @@
-//server/routes/routes.js
+
 var express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
@@ -30,5 +30,35 @@ router.get('/shows',(req,res)=>{
     }
   })
   
+})
+//email
+
+var nodemailer = require('nodemailer');
+
+
+router.post('/signin',(req,res)=>{
+  console.log(req.body)
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'cinemarkbooking@gmail.com',
+      pass: 'Cinemark@123'
+    }
+  });
+  
+  var mailOptions = {
+    from: 'takleakshar@gmail.com',
+    to: 'shaligramjui@gmail.com',
+    subject: 'Sending Email using Node.js',
+    text: 'That was easy!'
+  };
+  
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
 })
 module.exports = router;
